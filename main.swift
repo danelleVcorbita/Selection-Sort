@@ -1,29 +1,37 @@
-
-
-// ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩
-// DO NOT ALTER THE TEXT BETWEEN THESE LINES =========={M{E{R{L{I{N{1}N}I}L}R}E}M}=====================================
-let unsortedIntegers = [5, 1, 4, 2, 8]
-// DO NOT ALTER THE TEXT BETWEEN THESE LINES =========={M{E{R{L{I{N{1}N}I}L}R}E}M}=====================================
-// ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧
-// Add your code below:
-var unsorted = unsortedIntegers
-var array = unsorted.count
-var x = 0
-var total = 0
-for number in 0..<array - 1{
-
-    var minimum = number
-
-    for comparison in number + 1 ..< array {
-        if unsorted[comparison] < unsorted[minimum] {
-            minimum = comparison
-        }
-        
+import Foundation
+var unsortedString = [""]
+var unsortedInts: [Int] = []
+while let input = readLine() {
+    unsortedString.append(input)
+}
+var i = 0
+var y = 0
+var z:Float = 0
+for _ in unsortedString {
+    for s in unsortedString[x].utf8 {
+        z += Float(s)/pow((1000.0), Float(y))
+        y += 1
     }
-    print("Pass: \(total), Swaps: \(x)/\(total), Array: \(unsorted)")
-    unsorted.swapAt(number,minimum)
+    unsortedInts.append(Int(z))
+    y = 0
+    i += 1
+    z = 0
+}
+
+var total = 0
+var x = 0
+var unsortedInt = unsortedInts
+for iteration in 0 ..< unsortedInt.count - 1 {
+
+    var min = iteration
+
+    for compare in iteration + 1 ..< unsortedInt.count {
+        if unsortedInt[compare] < unsortedInt[min] {
+            min = compare
+        }
+    }
+    unsortedString.swapAt(iteration, min)
+    unsortedInt.swapAt(iteration, min)
     x = 1
     total += 1
 }
- print("Pass: \(total), Swaps: \(x)/\(total), Array: \(unsorted)")
-
